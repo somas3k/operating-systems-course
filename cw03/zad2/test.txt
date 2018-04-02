@@ -1,0 +1,11 @@
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+./prog

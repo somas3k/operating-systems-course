@@ -1,0 +1,15 @@
+Wysyłanie do procesu:
+1. Przy braku jakiejkolwiek maski: SIGUSR1, SIGTERM, SIGKILL - kończą cały proces i wszystkie wątki, SIGSTOP - zatrzymuje cały proces
+2. Gdy tylko główny wątek ma maskę: SIGUSR1, SIGTERM, SIGKILL - kończą cały proces i wszystkie wątki, a SIGSTOP - zatrzymuje cały proces
+3. Gdy wszystkie wątki mają niestandardową obsługę: SIGUSR1, SIGTERM - zostają złapane jedynie przez główny wątek, SIGKILL - zabija proces, SIGSTOP - zatrzymuje cały proces
+
+Wysyłanie do wątku:
+1. Gdy wątek ma maske: SIGUSR1, SIGTERM - zostają zignorowane, program działa dalej, SIGKILL - zabija cały proces, SIGSTOP - zatrzymuje cały proces
+2. Gdy wątek ma niestandardową obsługe sygnałów: SIGUSR1, SIGTERM - zostają przechwycone, SIGKILL - zabija cały proces, SIGSTOP - zatrzymuje cały proces
+
+
+Dla dzielenia przez zero wszystkie wątki zatrzymują działanie, mimo, że dzieje się to tylko w jednym.
+
+Kernel: Linux 4.10.15-200.fc25.x86_64 x86_64
+Procesor: x86_64 
+System operacyjny: x86_64 GNU/Linux Fedora 25

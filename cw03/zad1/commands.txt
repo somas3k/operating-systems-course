@@ -1,0 +1,5 @@
+#SCIEZKA ..
+ls $SCIEZKA
+#CMD ls
+$CMD -al $SCIEZKA
+./prog CMD
